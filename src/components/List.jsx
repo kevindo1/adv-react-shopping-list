@@ -1,6 +1,11 @@
 import React from 'react';
 
-export default function List({ items, deleteItem, editItem }) {
+export default function List({ items }) {
+  // const [currentItem, setCurrentItem] = useState(false);
+
+  // if (editItem) {
+  // }
+
   return (
     <div>
       <ul>
