@@ -58,7 +58,7 @@ export default function Home() {
   const editItem = (select) => {
     dispatch({
       type: 'edit',
-      id: select,
+      select,
     });
   };
 
