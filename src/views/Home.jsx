@@ -41,7 +41,7 @@ export default function Home() {
     <div>
       <h1>Shopping List</h1>
       <Add addItem={addItem} />
-      <List />
+      <List items={items} />
     </div>
   );
 }
