@@ -20,6 +20,17 @@ function shoppingReducer(items, action) {
         },
       ];
     }
+    case 'delete': {
+      return items.filter((item) => item.id !== action.id);
+    }
+    case 'edit': {
+      return items.map((item) => {
+        if (item.id === action.task.id) {
+          return action.task;
+        }
+        return item;
+      });
+    }
     default: {
       throw Error(`Unknown type: ${action.type}`);
     }
@@ -37,11 +48,25 @@ export default function Home() {
     });
   };
 
+  const deleteItem = (deleteId) => {
+    dispatch({
+      type: 'delete',
+      id: deleteId,
+    });
+  };
+
+  const editItem = (task) => {
+    dispatch({
+      type: 'edit',
+      id: task,
+    });
+  };
+
   return (
     <div>
       <h1>Shopping List</h1>
       <Add addItem={addItem} />
-      <List items={items} />
+      <List items={items} deleteItem={deleteItem} editItem={editItem} />
     </div>
   );
 }
