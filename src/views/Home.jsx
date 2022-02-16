@@ -25,8 +25,8 @@ function shoppingReducer(items, action) {
     }
     case 'edit': {
       return items.map((item) => {
-        if (item.id === action.task.id) {
-          return action.task;
+        if (item.id === action.select.id) {
+          return action.select;
         }
         return item;
       });
@@ -55,10 +55,10 @@ export default function Home() {
     });
   };
 
-  const editItem = (task) => {
+  const editItem = (select) => {
     dispatch({
       type: 'edit',
-      id: task,
+      id: select,
     });
   };
 
