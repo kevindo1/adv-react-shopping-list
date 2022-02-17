@@ -12,20 +12,31 @@ export default function List({ items, editItem, deleteItem }) {
               <li key={item.id}>
                 {item.text}
                 <input
+                  aria-label={`Edit ${item.text}`}
                   value={item.text}
                   onChange={(e) => {
                     editItem({ ...item, text: e.target.value });
                   }}
                 />
-                <button onClick={() => setEditingItem(false)}>Save</button>
+                <button aria-label={`Save ${item.text}`} onClick={() => setEditingItem(false)}>
+                  Save
+                </button>
               </li>
             );
           } else {
             return (
               <li key={item.id}>
                 <p>{item.text}</p>
-                <button onClick={() => setEditingItem(true)}>Edit</button>
-                <button onClick={() => deleteItem(item.id)}>Delete</button>
+                <label>
+                  <button aria-label={`Edit ${item.text}`} onClick={() => setEditingItem(true)}>
+                    Edit
+                  </button>
+                </label>
+                <label>
+                  <button aria-label={`Delete ${item.text}`} onClick={() => deleteItem(item.id)}>
+                    Delete
+                  </button>
+                </label>
               </li>
             );
           }
