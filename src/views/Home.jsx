@@ -9,7 +9,11 @@ const initialItems = [
 ];
 
 function shoppingReducer(items, action) {
+  // { type: 'changed', id:1, text: "new item", done: false }
   switch (action.type) {
+    // think of switch as a if statement, if (action.type === 'added') {
+    // return [...items, { id: action.id, text: action.text, done: false }]
+    // }
     case 'add': {
       return [
         ...items,
