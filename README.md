@@ -43,4 +43,8 @@ See the section about [running tests](https://facebook.github.io/create-react-ap
 
 - List that has map of items including their name, edit, and delete
 
-####
+#### Context
+
+- Add the reducer and switch cases into the context folder
+- Return the provider
+- Wrap app in the provider
