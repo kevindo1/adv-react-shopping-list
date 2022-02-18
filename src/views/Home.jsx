@@ -1,5 +1,6 @@
 import React from 'react';
 import Add from '../components/Add/Add';
+import Header from '../components/Header/Header';
 import List from '../components/List/List';
 import { useList } from '../context/Context';
 
@@ -8,6 +9,7 @@ export default function Home() {
 
   return (
     <div>
+      <Header items={items} />
       <h1>Shopping List</h1>
       <Add addItem={addItem} />
       <List items={items} deleteItem={deleteItem} editItem={editItem} />
