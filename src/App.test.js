@@ -43,4 +43,10 @@ test('renders shopping list with add/edit/delete', () => {
   userEvent.click(deleteButton);
 
   expect(screen.queryByText('plswork')).not.toBeInTheDocument();
+
+  // LIST LENGTH TEST
+
+  const list = screen.getByRole('list');
+
+  expect(list.children.length).toBe(3);
 });
