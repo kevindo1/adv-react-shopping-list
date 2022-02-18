@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-export default function List({ item, editItem, deleteItem }) {
+export default function Item({ item, editItem, deleteItem }) {
   const [editingItem, setEditingItem] = useState(false);
 
   let itemStatus;

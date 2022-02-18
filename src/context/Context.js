@@ -33,6 +33,9 @@ function shoppingReducer(items, action) {
         return item;
       });
     }
+    case 'clear': {
+      return (items = []);
+    }
     default: {
       throw Error(`Unknown type: ${action.type}`);
     }
@@ -66,8 +69,14 @@ const ListProvider = ({ children }) => {
     });
   };
 
+  const clearCart = () => {
+    dispatch({
+      type: 'clear',
+    });
+  };
+
   return (
-    <ListContext.Provider value={{ items, addItem, deleteItem, editItem }}>
+    <ListContext.Provider value={{ items, addItem, deleteItem, editItem, clearCart }}>
       {children}
     </ListContext.Provider>
   );
