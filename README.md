@@ -23,3 +23,24 @@ You will also see any lint errors in the console.
 
 Launches the test runner in the interactive watch mode.\
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+
+#### Home View
+
+- const [items, dispatch] = useReducer(shoppingReducer, initialState)
+- reducer with switch cases including "add", "edit", "delete"
+- dispatch({
+  type: 'add',
+  id: items.length + 1,
+  text,
+  })
+
+#### Add Component
+
+- Input Box
+- Add item button
+
+#### Shopping List
+
+- List that has map of items including their name, edit, and delete
+
+####
